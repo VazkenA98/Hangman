@@ -40,31 +40,6 @@ public class GameGUI extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-      /*  if (e.getSource() == word) {
-            s = names[(int)(Math.random()*names.length)];
-            letters = new char[s.length()];
-            Arrays.fill(letters, '*');
-            txt1.setText(String.valueOf(letters));
-        }
-        if (e.getSource() == check) {
-            try {
-                String ans = txt2.getText();
-                if (s.contains(ans)) {
-                    char ch = ans.charAt(0);
-                    for (int i = 0; i < s.length(); i++) {
-                        if (Character.toLowerCase(s.charAt(i)) == Character.toLowerCase(ch))
-                            letters[i] = s.charAt(i);
-                    }
-                    txt1.setText(String.valueOf(letters));
-                    if (!String.valueOf(letters).contains("*"))
-                        new MyError("Congrats. You found the word!");
-                } else
-                    new MyError("You entered wrong key");
-            } catch (NullPointerException err) {
-                new MyError("You must enter a letter");
-            } finally {
-                txt2.setText("");
-            }
-        }*/
+
     }
 }
