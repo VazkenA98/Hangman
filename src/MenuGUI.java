@@ -1,7 +1,11 @@
+import words.*;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Arrays;
+
 
 public class MenuGUI extends JFrame implements ActionListener {
     private JButton start_but = new JButton("START");
@@ -26,6 +30,7 @@ public class MenuGUI extends JFrame implements ActionListener {
     private JPanel jPanel3 =  new JPanel();
     private JPanel jPanel4 =  new JPanel();
     private JPanel jPanel5 =  new JPanel();
+
 
     public MenuGUI(){
         setLayout(new GridLayout(5,1));
@@ -70,6 +75,7 @@ public class MenuGUI extends JFrame implements ActionListener {
         animals_r.addActionListener(this);
         cars_r.addActionListener(this);
         fruits_r.addActionListener(this);
+        start_but.addActionListener(this);
 
 
         setSize(400, 400);
@@ -78,30 +84,40 @@ public class MenuGUI extends JFrame implements ActionListener {
     }
     @Override
     public void actionPerformed(ActionEvent e) {
+        Level level = Level.EASY;
+        Word word =  new Car();
         if(easy_r.isSelected()){
-
+            level = Level.EASY;
         }
         if(medium_r.isSelected()){
-
+            level = Level.MEDIUM;
         }
         if(hard_r.isSelected()){
-
+            level = Level.HARD;
         }
         if(cars_r.isSelected()){
-
+            word =  new Car();
         }
         if(city_r.isSelected()){
-
+            word =  new City();
         }
         if(country_r.isSelected()){
-
+            word =  new Country();
         }
         if(animals_r.isSelected()){
-
+            word =  new Animal();
         }
         if(fruits_r.isSelected()){
-
+            word =  new Fruit();
+        }
+        if(e.getSource() == start_but){
+            WordGenerator wordGenerator =  new WordGenerator();
+            wordGenerator.Generate(word,level);
+            GameGUI gameGUI =  new GameGUI();
+            this.dispose();
         }
 
+
     }
+
 }

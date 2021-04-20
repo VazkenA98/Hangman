@@ -1,6 +1,5 @@
 package words;
 
-import java.util.logging.Level;
 
 public class Fruit extends Word{
 

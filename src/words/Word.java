@@ -1,10 +1,10 @@
 package words;
 
-import java.util.logging.Level;
 
 public abstract class Word {
 
     private String name;
+
     private Level level;
 
     public Word() {
@@ -29,5 +29,13 @@ public abstract class Word {
 
     public void setLevel(Level level) {
         this.level = level;
+    }
+
+    @Override
+    public String toString() {
+        return "Word{" +
+                "name='" + name + '\'' +
+                ", level=" + level +
+                '}';
     }
 }

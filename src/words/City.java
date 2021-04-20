@@ -1,6 +1,6 @@
 package words;
 
-import java.util.logging.Level;
+
 
 public class City extends Word{
 
